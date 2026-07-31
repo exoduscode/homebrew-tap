@@ -1,0 +1,21 @@
+class Lsusers < Formula
+  include Language::Python::Virtualenv
+
+  desc "List Linux and macOS user accounts simply"
+  homepage "https://github.com/exoduscode/lsusers"
+  url "https://github.com/exoduscode/lsusers/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "19dbdb17bdcd3758f367012ca94da621953470a92bfc64de2a29173235646cce"
+  license "MIT"
+
+  depends_on "python@3.13"
+
+  def install
+    virtualenv_install_with_resources
+  end
+
+  test do
+    assert_match "lsusers 0.1.2", shell_output("#{bin}/lsusers --version")
+    assert_match "usage:", shell_output("#{bin}/lsusers --help")
+    assert_match "human:", shell_output("#{bin}/lsusers count")
+  end
+end
