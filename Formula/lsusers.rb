@@ -3,8 +3,8 @@ class Lsusers < Formula
 
   desc "List Linux and macOS user accounts simply"
   homepage "https://github.com/exoduscode/lsusers"
-  url "https://github.com/exoduscode/lsusers/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "19dbdb17bdcd3758f367012ca94da621953470a92bfc64de2a29173235646cce"
+  url "https://github.com/exoduscode/lsusers/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "173c83cbc9ec7ab942aaa07252a8ae8684fadc6fa53df461c0b6e31c3a21856c"
   license "MIT"
 
   depends_on "python@3.13"
@@ -14,7 +14,7 @@ class Lsusers < Formula
   end
 
   test do
-    assert_match "lsusers 0.1.2", shell_output("#{bin}/lsusers --version")
+    assert_match "lsusers 0.1.3", shell_output("#{bin}/lsusers --version")
     assert_match "usage:", shell_output("#{bin}/lsusers --help")
     assert_match "human:", shell_output("#{bin}/lsusers count")
   end
