@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Register checkout as tap
         run: brew tap --custom-remote exoduscode/tap "$GITHUB_WORKSPACE"
@@ -29,4 +29,3 @@ jobs:
 
       - name: Test formula
         run: brew test exoduscode/tap/lsusers
-
